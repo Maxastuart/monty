@@ -1,14 +1,14 @@
 # monty Tests
 #### Max Stuart, 24 September 2019
 
+_
 
 ### In this README:
 
-__**testname**__ - _brief explaination_: 
-_ 
+__**testname**__ - _brief explaination_:
 ```
 expected output
-``` 
+```
 _
 
 ### In this /tests/ directory:
@@ -59,6 +59,11 @@ __push4.m__ - checks that line count on errors counts blank lines:
 L4: usage: push integer
 ```
 
+__push5.m__ - checks no error on pushing negative numbers:
+```
+
+```
+
 __pall0.m__ - checks `pall` does nothing when stack is empty:
 ```
 
@@ -71,6 +76,13 @@ __pall1.m__ - checks basic `pall` usage:
 1
 ```
 
+__pall2.m__ - checks no error on printing negative numbers:
+```
+-3
+-2
+-1
+```
+
 __pint0.m__ - checks basic `pint` usage:
 ```
 1
@@ -81,4 +93,19 @@ __pint0.m__ - checks basic `pint` usage:
 __pint1.m__ - checks `pint`'s error message:
 ```
 L1: can't pint, stack empty
+```
+
+__pint2.m__ - checks `pint` prints multi-digit & negatives:
+```
+-1234
+```
+
+__pop0.m__ - checks `pop` basic usage:
+```
+3
+2
+1
+2
+1
+1
 ```
