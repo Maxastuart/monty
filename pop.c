@@ -23,7 +23,7 @@ int pop(stack_t **stack, unsigned int line_number)
 		(*stack)->next = NULL;
 	}
 	else
-       		*stack = NULL;
+		*stack = NULL;
 
 	free(temp);
 

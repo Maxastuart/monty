@@ -28,11 +28,11 @@ int push(stack_t **stack, unsigned int line_number __attribute__((unused)))
 		}
 	}
 	new = malloc(sizeof(stack_t));
-        if (new == NULL)
-        {
-                printf("Error: malloc failed\n");
-                return (1);
-        }
+	if (new == NULL)
+	{
+		printf("Error: malloc failed\n");
+		return (1);
+	}
 	new->n = atoi(val);
 	new->next = NULL;
 	if (*stack == NULL)
