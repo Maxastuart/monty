@@ -1,40 +1,26 @@
 # monty Tests
 #### Max Stuart, 24 September 2019
-
-_
-
+___
 ### To Use These Tests
-
-
 You'll need:
 - the `monty` program compiled using `gcc 4.8.4` (most easily setup on `ubuntu 14.04.4 (trusty-64)`)
-- and Valgrind.
-
-
+- and Valgrind (`sudo apt-get install valgrind`).
 From the /monty/ directory run:
 ```
 :~/monty$ gcc -Wall -Werror -Wextra -pedantic *.c -g -o monty
 ```
-
-
 then:
 ```
 :~/monty$ valgrind --track-origins=yes --leak-check=full ./monty ./tests/<testfilename>
 ```
-
-
--
+___
 #### Below test explainations are formatted like so:
-_
 **_testfilename_** - _brief explaination_:
 ```
 expected output
 ```
-
-
-
+___
 ### The Tests In This /tests/ Directory
-
 __push0.m__ - checks extraneous spacing in correct usage of `push` and `pall` (sample code from README & instructions):
 ```
 3
