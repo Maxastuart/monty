@@ -109,3 +109,28 @@ __pop0.m__ - checks `pop` basic usage:
 1
 1
 ```
+
+__pop1.m__ - checks `pop`'s error message:
+```
+L1: can't pop an empty stack
+```
+
+__swap0.m__ - checks `swap`'s basic usage:
+```
+3
+2
+1
+2
+3
+1
+```
+
+__swap1.m__ - checks `swap`'s error message for empty stack:
+```
+L1: can't swap, stack too short
+```
+
+__swap2.m__ - checks `swap`'s error message for stack of 1:
+```
+L2: can't swap, stack too short
+```
