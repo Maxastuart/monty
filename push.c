@@ -34,13 +34,13 @@ int push(stack_t **stack, unsigned int line_number __attribute__((unused)))
 		}
 	}
 	new->n = atoi(val);
-	new->prev = NULL;
+	new->next = NULL;
 	if (*stack == NULL)
-		new->next = NULL;
+		new->prev = NULL;
 	else
 	{
-		new->next = *stack;
-		(*stack)->prev = new;
+		new->prev = *stack;
+		(*stack)->next = new;
 	}
 	*stack = new;
 	return (0);

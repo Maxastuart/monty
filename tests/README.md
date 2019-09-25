@@ -102,6 +102,11 @@ __pint2.m__ - checks `pint` prints multi-digit & negatives:
 
 __pop0.m__ - checks `pop` basic usage:
 ```
+303
+```
+
+__pop1.m__ - checks `pop` usage s'more:
+```
 3
 2
 1
@@ -110,7 +115,7 @@ __pop0.m__ - checks `pop` basic usage:
 1
 ```
 
-__pop1.m__ - checks `pop`'s error message:
+__pop2.m__ - checks `pop`'s error message:
 ```
 L1: can't pop an empty stack
 ```

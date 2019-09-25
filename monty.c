@@ -93,7 +93,7 @@ void free_list(stack_t *head)
 
 	while (head != NULL)
 	{
-		temp = head->next;
+		temp = head->prev;
 		free(head);
 		head = temp;
 	}

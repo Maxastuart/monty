@@ -1,10 +1,6 @@
-push 1
-push 2
-push 3
+push 303
 pall
 pop
 pall
-pop
-pall
-pop
+push 7
 pall

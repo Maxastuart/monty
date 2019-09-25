@@ -5,16 +5,16 @@
  * @stack: pointer to the stack
  * @line_number: unused.
  *
- * Return: 0 on success, 1 on error.
+ * Return: Always 0.
  */
 int pall(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	stack_t *temp = *stack;
 
-	while (temp)
+	while (temp != NULL)
 	{
 		printf("%d\n", temp->n);
-		temp = temp->next;
+		temp = temp->prev;
 	}
 	return (0);
 }
