@@ -17,8 +17,15 @@ int pop(stack_t **stack, unsigned int line_number)
 		return (1);
 	}
 	temp = *stack;
-	*stack = (*stack)->prev;
-	(*stack)->next = NULL;
+	if ((*stack)->prev != NULL)
+	{
+		*stack = (*stack)->prev;
+		(*stack)->next = NULL;
+	}
+	else
+       		*stack = NULL;
+
 	free(temp);
+
 	return (0);
 }

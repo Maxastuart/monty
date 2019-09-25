@@ -19,12 +19,6 @@ int push(stack_t **stack, unsigned int line_number __attribute__((unused)))
 		printf("L%d: usage: push integer\n", line_number);
 		return (1);
 	}
-	new = malloc(sizeof(stack_t));
-	if (new == NULL)
-	{
-		printf("Error: malloc failed\n");
-		return (1);
-	}
 	for (i = 0; val[i]; i++)
 	{
 		if (isalpha(val[i]))
@@ -33,6 +27,12 @@ int push(stack_t **stack, unsigned int line_number __attribute__((unused)))
 			return (1);
 		}
 	}
+	new = malloc(sizeof(stack_t));
+        if (new == NULL)
+        {
+                printf("Error: malloc failed\n");
+                return (1);
+        }
 	new->n = atoi(val);
 	new->next = NULL;
 	if (*stack == NULL)
