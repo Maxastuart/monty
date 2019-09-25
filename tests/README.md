@@ -4,12 +4,15 @@
 
 ### In this README:
 
-_testname_ - _brief explaination_:
-_expected output_
+__**testname**__ - _brief explaination_:
+_```
+expected output
+```
+_
 
 ### In this /tests/ directory:
 
-push0.m - checks extraneous spacing in correct usage of `push` and `pall` (sample code from README & instructions):
+__push0.m__ - checks extraneous spacing in correct usage of `push` and `pall` (sample code from README & instructions):
 ```
 3
 2
@@ -24,7 +27,7 @@ push0.m - checks extraneous spacing in correct usage of `push` and `pall` (sampl
 0
 ```
 
-push1.m - checks extraneous input after opcode / opcode + argument and newlines (more sample code from README & instructions):
+__push1.m__ - checks extraneous input after opcode / opcode + argument and newlines (more sample code from README & instructions):
 ```
 3
 2
@@ -39,38 +42,42 @@ push1.m - checks extraneous input after opcode / opcode + argument and newlines 
 0
 ```
 
-push2.m - checks for error on nothing provided after `push`:
+__push2.m__ - checks for error on nothing provided after `push`:
 ```
 L3: usage: push integer
 ```
 
-push3.m - checks for error on non-integer argument after `push`:
+__push3.m__ - checks for error on non-integer argument after `push`:
 ```
 L1: usage: push integer
 ```
 
-push4.m - checks that line count on errors counts blank lines:
+__push4.m__ - checks that line count on errors counts blank lines:
 ```
 1
 L4: usage: push integer
 ```
 
-pall0.m - checks pall when stack is empty:
+__pall0.m__ - checks `pall` does nothing when stack is empty:
 ```
 
 ```
 
-pall1.m - checks basic pall usage:
+__pall1.m__ - checks basic `pall` usage:
 ```
 3
 2
 1
 ```
 
-pint0.m - checks basic pint usage:
+__pint0.m__ - checks basic `pint` usage:
 ```
 1
 2
 3
 ```
 
+__pint1.m__ - checks `pint`'s error message:
+```
+L1: can't pint, stack empty
+```
