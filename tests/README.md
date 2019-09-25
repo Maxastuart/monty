@@ -4,10 +4,10 @@
 ## testname - brief explaination
 ## expected output
 
-push0.m - from main sample code/README
+push0.m - sample code from README & instructions
 normal
 
-push1.m - from main sample code/README
+push1.m - more sample code from README & instructions
 normal
 
 push2.m - checks for error on nothing provided after push opcode

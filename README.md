@@ -1,5 +1,5 @@
 # monty
-### Max Stuart 24 September 2019
+#### Max Stuart, 24 September 2019
 
 ## The Monty Interpreter
 ### An interpreter for Monty ByteCode files
