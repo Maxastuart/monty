@@ -134,3 +134,48 @@ __swap2.m__ - checks `swap`'s error message for stack of 1:
 ```
 L2: can't swap, stack too short
 ```
+
+__add0.m__ - checks `add`'s basic usage:
+```
+3
+2
+1
+5
+1
+6
+```
+
+__add1.m__ - checks `add`'s error message on no stack (& that `pall` doesn't do anything):
+```
+L2: can't add, stack too short
+```
+
+__add2.m__ - checks `add`'s error message on stack of 1:
+```
+3
+L3: can't add, stack too short
+```
+
+__add3.m__ - checks `add`'s handling of negative integers:
+```
+-25
+-30
+```
+
+__nop0.m__ - checks that `nop` does nothing when alone:
+```
+
+```
+
+__nop1.m__ - checks that `nop` does nothing in a sentence:
+```
+
+```
+
+__nop2.m__ - checks that `nop` does nothing in a script:
+```
+1
+69
+70
+```
+
