@@ -4,10 +4,11 @@
 
 ### In this README:
 
-__**testname**__ - _brief explaination_:
-_```
-expected output
+__**testname**__ - _brief explaination_: 
+_ 
 ```
+expected output
+``` 
 _
 
 ### In this /tests/ directory:
