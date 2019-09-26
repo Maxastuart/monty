@@ -21,6 +21,32 @@ expected output
 ```
 ___
 ### The Tests In This /tests/ Directory
+
+__0.m__ - checks result on empty file:
+```
+
+```
+
+__1.m__ - checks result on file with only whitespace:
+```
+
+```
+
+__ppush0.m__ - checks typo in beginning of opcode:
+```
+L1: unknown instruction ppush
+```
+
+__ppush1.m__ - checks typo in end of opcode:
+```
+L1: unknown instruction pushh
+```
+
+__ppush2.m__ - checks for capitolization in opcode:
+```
+L1: unknown instruction Push
+```
+
 __push0.m__ - checks extraneous spacing in correct usage of `push` and `pall` (sample code from README & instructions):
 ```
 3
