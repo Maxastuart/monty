@@ -238,3 +238,20 @@ __nop2.m__ - checks that `nop` does nothing in a script:
 69
 70
 ```
+
+__sub0.m__ - checks basic sub usage
+```
+7
+2
+1
+```
+
+__sub1.m__ - checks `sub`'s error message on no stack:
+```
+L1: can't sub, stack too short
+```
+
+__sub2.m__ - checks `sub`'s error message on stack of 1:
+```
+L2: can't sub, stack too short
+```
