@@ -16,21 +16,22 @@ int push(stack_t **stack, unsigned int line_number __attribute__((unused)))
 	val = strtok(NULL, delim);
 	if (val == NULL)
 	{
-		printf("L%d: usage: push integer\n", line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		return (1);
 	}
 	for (i = 0; val[i]; i++)
 	{
 		if (isalpha(val[i]))
 		{
-			printf("L%d: usage: push integer\n", line_number);
+			fprintf(stderr, "L%d: usage: push integer\n",
+				line_number);
 			return (1);
 		}
 	}
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		printf("Error: malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		return (1);
 	}
 	new->n = atoi(val);
