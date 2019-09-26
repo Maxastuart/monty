@@ -14,14 +14,15 @@ int push(stack_t **stack, unsigned int line_number __attribute__((unused)))
 	int i;
 
 	val = strtok(NULL, delim);
-	if (val == NULL)
+	if ((val == NULL) ||
+	    ((val[0] != '+') && (val[0] != '-') && (isdigit(val[0]) == 0)))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		return (1);
 	}
-	for (i = 0; val[i]; i++)
+	for (i = 1; val[i]; i++)
 	{
-		if (isalpha(val[i]))
+		if (isdigit(val[i]) == 0)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n",
 				line_number);

@@ -87,6 +87,11 @@ __push8.m__ - checks for error on % non-integer argument after `push`:
 L1: usage: push integer
 ```
 
+__push9.m__ - checks whats the result of only + as argument after `push`:
+```
+0 (unknown if this is to be expected!)
+```
+
 __pall0.m__ - checks `pall` does nothing when stack is empty:
 ```
 
