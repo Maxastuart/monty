@@ -131,6 +131,7 @@ __pint2.m__ - checks `pint` prints multi-digit & negatives:
 __pop0.m__ - checks `pop` basic usage:
 ```
 303
+7
 ```
 
 __pop1.m__ - checks `pop` usage s'more:
