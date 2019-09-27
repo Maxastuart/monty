@@ -37,7 +37,7 @@ typedef struct instruction_s
 } instruction_t;
 
 int goto_func(char *opcode, stack_t **top, unsigned int line_number,
-	      bool q_mode);
+	      unsigned int q_mode);
 
 void free_list(stack_t *head);
 

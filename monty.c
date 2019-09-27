@@ -10,9 +10,9 @@
 int main(int argc, char **argv)
 {
 	FILE *file;
-	bool q_mode = false;
+
 	char *opcode = NULL, *line = NULL, *delim = "\n \a\t\0";
-	unsigned int fval, line_num = 0;
+	unsigned int fval, line_num = 0, q_mode = 0;
 	size_t len = 0;
 	ssize_t nread;
 	stack_t *top = NULL;
@@ -43,9 +43,9 @@ int main(int argc, char **argv)
 				exit(EXIT_FAILURE);
 			}
 			else if (fval == 2)
-				q_mode = false;
+				q_mode = 0;
 			else if (fval == 3)
-				q_mode = true;
+				q_mode = 1;
 		}
 	}
 	free(line);
@@ -60,10 +60,12 @@ int main(int argc, char **argv)
  * @opcode: string from the Monty ByteCode file (should be a command)
  * @top: pointer to a script
  * @line_number: line count from the file (for error reporting)
+ * @q_mode: 0 if stack mode, 1 if queue mode
  *
  * Return: 0 on success, 1 on error, 2 on 'stack', 3 on 'queue'.
  */
-int goto_func(char *opcode, stack_t **top, unsigned int line_number, bool mode)
+int goto_func(char *opcode, stack_t **top, unsigned int line_number,
+	      unsigned int q_mode)
 {
 	int i;
 	instruction_t ins[] = {
@@ -88,9 +90,9 @@ int goto_func(char *opcode, stack_t **top, unsigned int line_number, bool mode)
 		return (2);
 	else if (strcmp(opcode, "queue"))
 		return (3);
-	else if (q_mode == false)
+	else if (q_mode == 0)
 		ins[0].f = push;
-	else if (q_mode == true)
+	else if (q_mode == 1)
 		ins[0].f = push_q;
 	for (i = 0; ins[i].f != NULL; i++)
 		if (strcmp(opcode, ins[i].opcode) == 0)

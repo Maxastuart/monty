@@ -47,7 +47,7 @@ int push_q(stack_t **stack, unsigned int line_number __attribute__((unused)))
 		temp = *stack;
 		while (temp->prev != NULL)
 			temp = temp->prev;
-		temp->prev = new
+		temp->prev = new;
 		new->next = temp;
 	}
 	return (0);
