@@ -10,8 +10,9 @@
 int main(int argc, char **argv)
 {
 	FILE *file;
+	bool q_mode = false;
 	char *opcode = NULL, *line = NULL, *delim = "\n \a\t\0";
-	unsigned int line_num = 0;
+	unsigned int fval, line_num = 0;
 	size_t len = 0;
 	ssize_t nread;
 	stack_t *top = NULL;
@@ -32,13 +33,20 @@ int main(int argc, char **argv)
 		line_num++;
 		opcode = strtok(line, delim);
 		if (opcode)
-			if (goto_func(opcode, &top, line_num))
+		{
+			fval = goto_func(opcode, &top, line_num, q_mode);
+			if (fval == 1)
 			{
 				free(line);
 				fclose(file);
 				free_list(top);
 				exit(EXIT_FAILURE);
 			}
+			else if (fval == 2)
+				q_mode = false;
+			else if (fval == 3)
+				q_mode = true;
+		}
 	}
 	free(line);
 	fclose(file);
@@ -53,9 +61,9 @@ int main(int argc, char **argv)
  * @top: pointer to a script
  * @line_number: line count from the file (for error reporting)
  *
- * Return: 0 on success, 1 on error.
+ * Return: 0 on success, 1 on error, 2 on 'stack', 3 on 'queue'.
  */
-int goto_func(char *opcode, stack_t **top, unsigned int line_number)
+int goto_func(char *opcode, stack_t **top, unsigned int line_number, bool mode)
 {
 	int i;
 	instruction_t ins[] = {
@@ -74,10 +82,16 @@ int goto_func(char *opcode, stack_t **top, unsigned int line_number)
 		{"pstr", pstr},
 		{"\0", NULL}
 	};
-
 	if (opcode[0] == '#')
-		return (nop(top, line_number));
-
+		return (0);
+	else if (strcmp(opcode, "stack"))
+		return (2);
+	else if (strcmp(opcode, "queue"))
+		return (3);
+	else if (q_mode == false)
+		ins[0].f = push;
+	else if (q_mode == true)
+		ins[0].f = push_q;
 	for (i = 0; ins[i].f != NULL; i++)
 		if (strcmp(opcode, ins[i].opcode) == 0)
 			return (ins[i].f(top, line_number));

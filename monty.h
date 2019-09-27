@@ -36,7 +36,8 @@ typedef struct instruction_s
 	int (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-int goto_func(char *opcode, stack_t **top, unsigned int line_number);
+int goto_func(char *opcode, stack_t **top, unsigned int line_number,
+	      bool q_mode);
 
 void free_list(stack_t *head);
 
@@ -65,5 +66,7 @@ int modm(stack_t **stack, unsigned int line_number);
 int pchar(stack_t **stack, unsigned int line_number);
 
 int pstr(stack_t **stack, unsigned int line_number);
+
+int push_q(stack_t **stack, unsigned int line_number);
 
 #endif /* __MONTY__ */
