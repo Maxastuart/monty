@@ -9,16 +9,31 @@
  */
 int divm(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp = *stack;
+	stack_t *temp;
 
-	if ((*stack == NULL) || ((*stack)->next == NULL))
+	if (*stack == NULL)
 	{
-		printf("L%d: can't div, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't div, stack too short\n",
+			line_number);
 		return (1);
 	}
-	((*stack)->next)->n /= (*stack)->n;
-	((*stack)->next)->prev = NULL;
-	*stack = (*stack)->next;
+	if ((*stack)->prev == NULL)
+	{
+		fprintf(stderr, "L%d: can't div, stack too short\n",
+			line_number);
+		return (1);
+	}
+	if ((*stack)->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line_number);
+		return (1);
+	}
+
+	temp = *stack;
+	((*stack)->prev)->n /= (*stack)->n;
+	((*stack)->prev)->next = NULL;
+	*stack = (*stack)->prev;
 	free(temp);
+
 	return (0);
 }
