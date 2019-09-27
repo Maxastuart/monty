@@ -281,3 +281,9 @@ __comment0.m__ - checks comment normal usage
 ```
 1
 ```
+
+__comment1.m__ - checks comment extreme usage
+```
+5
+L8: unknown instruction pi#nt
+```

@@ -70,17 +70,19 @@ int goto_func(char *opcode, stack_t **top, unsigned int line_number)
 		{"div", divm},
 		{"mul", mulm},
 		{"mod", modm},
-		{"#", nop},
 		{"\0", NULL}
 	};
 
+	if (opcode[0] == '#')
+		return (nop(top, line_number));
+
 	for (i = 0; ins[i].f != NULL; i++)
-	{
 		if (strcmp(opcode, ins[i].opcode) == 0)
 			return (ins[i].f(top, line_number));
-	}
+
 	fprintf(stderr, "L%d: unknown instruction %s\n",
 	       line_number, opcode);
+
 	return (1);
 }
 
