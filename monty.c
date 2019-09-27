@@ -10,7 +10,6 @@
 int main(int argc, char **argv)
 {
 	FILE *file;
-
 	char *opcode = NULL, *line = NULL, *delim = "\n \a\t\0";
 	unsigned int fval, line_num = 0, q_mode = 0;
 	size_t len = 0;
@@ -42,9 +41,9 @@ int main(int argc, char **argv)
 				free_list(top);
 				exit(EXIT_FAILURE);
 			}
-			else if (fval == 2)
+			if (fval == 2)
 				q_mode = 0;
-			else if (fval == 3)
+			if (fval == 3)
 				q_mode = 1;
 		}
 	}
@@ -86,9 +85,9 @@ int goto_func(char *opcode, stack_t **top, unsigned int line_number,
 	};
 	if (opcode[0] == '#')
 		return (0);
-	else if (strcmp(opcode, "stack"))
+	else if (strcmp(opcode, "stack") == 0)
 		return (2);
-	else if (strcmp(opcode, "queue"))
+	else if (strcmp(opcode, "queue") == 0)
 		return (3);
 	else if (q_mode == 0)
 		ins[0].f = push;
