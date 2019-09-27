@@ -62,4 +62,8 @@ int mulm(stack_t **stack, unsigned int line_number);
 
 int modm(stack_t **stack, unsigned int line_number);
 
+int pchar(stack_t **stack, unsigned int line_number);
+
+int pstr(stack_t **stack, unsigned int line_number);
+
 #endif /* __MONTY__ */
