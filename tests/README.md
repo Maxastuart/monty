@@ -276,3 +276,8 @@ __div3.m__ - checks `div`'s error message on attempted division by 0:
 ```
 L4: division by zero
 ```
+
+__comment0.m__ - checks comment normal usage
+```
+1
+```

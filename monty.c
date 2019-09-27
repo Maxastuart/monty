@@ -70,6 +70,7 @@ int goto_func(char *opcode, stack_t **top, unsigned int line_number)
 		{"div", divm},
 		{"mul", mulm},
 		{"mod", modm},
+		{"#", nop},
 		{"\0", NULL}
 	};
 
